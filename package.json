@@ -1,0 +1,42 @@
+{
+	"name": "landing-page-gutenberg-template",
+	"version": "1.0.0",
+	"description": "A landing page template for Gutenberg",
+	"main": "index.js",
+	"scripts": {
+		"watch": "webpack --watch",
+		"dev": "webpack --mode development",
+		"build": "webpack --mode production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wpajax/landing-page-gutenberg-template.git"
+	},
+	"author": "Ronald Huereca",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/wpajax/landing-page-gutenberg-template/issues"
+	},
+	"homepage": "https://github.com/wpajax/landing-page-gutenberg-template#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/cli": "^7.12.1",
+		"@babel/core": "^7.12.3",
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/plugin-transform-arrow-functions": "^7.12.1",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-react": "^7.12.1",
+		"babel-loader": "^8.1.0",
+		"babel-minify-webpack-plugin": "^0.3.1",
+		"babel-plugin-minify-mangle-names": "^0.5.0",
+		"babel-preset-es2015": "^6.24.1",
+		"css-loader": "^5.0.0",
+		"install": "^0.13.0",
+		"mini-css-extract-plugin": "^1.2.0",
+		"node-sass": "^4.14.1",
+		"npm": "^6.14.8",
+		"sass-loader": "^10.0.4",
+		"webpack": "^5.2.0",
+		"webpack-cli": "^4.1.0"
+	}
+}
