@@ -31,9 +31,10 @@ class Meta_Boxes {
 			'',
 			'_wpajax_enable_landing_template',
 			array(
-				'show_in_rest'  => true,
-				'type'          => 'boolean',
-				'auth_callback' => function () {
+				'sanitize_callback' => 'rest_sanitize_boolean',
+				'show_in_rest'      => true,
+				'type'              => 'boolean',
+				'auth_callback'     => function () {
 					return current_user_can( 'edit_posts' );
 				},
 			)
@@ -46,9 +47,10 @@ class Meta_Boxes {
 			'',
 			'_wpajax_disable_theme_stylesheet',
 			array(
-				'show_in_rest'  => true,
-				'type'          => 'boolean',
-				'auth_callback' => function () {
+				'sanitize_callback' => 'rest_sanitize_boolean',
+				'show_in_rest'      => true,
+				'type'              => 'boolean',
+				'auth_callback'     => function () {
 					return current_user_can( 'edit_posts' );
 				},
 			)
@@ -61,9 +63,10 @@ class Meta_Boxes {
 			'',
 			'_wpajax_set_body_class',
 			array(
-				'show_in_rest'  => true,
-				'type'          => 'string',
-				'auth_callback' => function () {
+				'sanitize_callback' => 'sanitize_text_field',
+				'show_in_rest'      => true,
+				'type'              => 'string',
+				'auth_callback'     => function () {
 					return current_user_can( 'edit_posts' );
 				},
 			)
@@ -74,26 +77,13 @@ class Meta_Boxes {
 		 */
 		register_post_meta(
 			'',
-			'_wpajax_set_body_class',
+			'_wpajax_set_body_color',
 			array(
-				'show_in_rest'  => true,
-				'type'          => 'string',
-				'auth_callback' => function () {
-					return current_user_can( 'edit_posts' );
-				},
-			)
-		);
-
-		/**
-		 * Meta for mode. Values are email_only, email_multiple, email_tld, email_collection.
-		 */
-		register_post_meta(
-			'',
-			'_effmr_mode',
-			array(
-				'show_in_rest'  => true,
-				'type'          => 'string',
-				'auth_callback' => function () {
+				'sanitize_callback' => 'sanitize_text_field',
+				'show_in_rest'      => true,
+				'single'            => true,
+				'type'              => 'string',
+				'auth_callback'     => function () {
 					return current_user_can( 'edit_posts' );
 				},
 			)
