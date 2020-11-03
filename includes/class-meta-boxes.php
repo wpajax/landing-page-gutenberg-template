@@ -41,38 +41,6 @@ class Meta_Boxes {
 		);
 
 		/**
-		 * Meta for enabling/disabling the theme's stylesheet (optional).
-		 */
-		register_post_meta(
-			'',
-			'_wpajax_disable_theme_stylesheet',
-			array(
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => true,
-				'type'              => 'boolean',
-				'auth_callback'     => function () {
-					return current_user_can( 'edit_posts' );
-				},
-			)
-		);
-
-		/**
-		 * Meta for body class to add (optional).
-		 */
-		register_post_meta(
-			'',
-			'_wpajax_set_body_class',
-			array(
-				'sanitize_callback' => 'sanitize_text_field',
-				'show_in_rest'      => true,
-				'type'              => 'string',
-				'auth_callback'     => function () {
-					return current_user_can( 'edit_posts' );
-				},
-			)
-		);
-
-		/**
 		 * Meta for background color of landing page (optional)
 		 */
 		register_post_meta(

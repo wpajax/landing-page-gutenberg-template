@@ -2,7 +2,7 @@ import Sidebar from "./sidebar";
 
 const { __ } = wp.i18n;
 const { registerPlugin } = wp.plugins;
-const { PluginDocumentSettingPanel } = wp.editPost;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { Fragment } = wp.element;
 
 registerPlugin("landing-page-gutenberg-template", {
@@ -20,11 +20,15 @@ registerPlugin("landing-page-gutenberg-template", {
 	render: () => {
 		return (
 			<Fragment>
-				<PluginDocumentSettingPanel
-					title={__('Landing Page', 'landing-page-gutenberg-template')}
+				<PluginSidebarMoreMenuItem target="landing-page-sidebar">
+					{__("Landing Page", "anding-page-gutenberg-template")}
+				</PluginSidebarMoreMenuItem>
+				<PluginSidebar
+					name="landing-page-sidebar"
+					title={__("Full Width", "anding-page-gutenberg-template")}
 				>
 					<Sidebar />
-				</PluginDocumentSettingPanel>
+				</PluginSidebar>
 			</Fragment>
 		);
 	},

@@ -84,6 +84,9 @@ class Landing_Page_Gutenberg {
 
 		$this->meta_boxes = new \WPAndAjax\Includes\Meta_Boxes();
 		$this->meta_boxes->run();
+
+		$this->template = new \WPAndAjax\Includes\Template();
+		$this->template->run();
 	}
 }
 Landing_Page_Gutenberg::get_instance();
